@@ -1,6 +1,8 @@
 # memoMaster-v1
 
-MemoMaster is a simple full-stack MERN (MongoDB, Express.js, React, Node.js) web application for managing notes. It allows users to create, edit, and delete notes while providing a seamless and responsive user interface.
+MemoMaster is a simple full-stack MERN (MongoDB, Express.js, React, Node.js) web application for managing notes. It allows users to create, edit, and delete notes while providing a seamless and responsive user interface. The backend nodejs server APIs, behind the scenes manipulate data as part of managing notes, CRUD operations that are used to manage data in a structured and efficient way, by providing the functionality to Create, Read, Update and Delete data records, as well as the sign-up and login process.
+
+The backend authentication side demonstrates building a secure authentication system using MongoDB as the database. The project utilizes popular technologies such as bcrypt for password hashing, dotenv for environment variable management, Express for handling HTTP requests, jsonwebtoken for token-based authentication, and mongoose for MongoDB integration.
 
 MERN Stack is a JavaScript Stack that is used for easier and faster deployment of full-stack web applications. MERN Stack comprises of 4 technologies namely: MongoDB, Express, React and Node. js. It is designed to make the development process smoother and easier.
 
@@ -75,7 +77,7 @@ MERN Stack is a JavaScript Stack that is used for easier and faster deployment o
 1. Navigate to the `server` directory.
 
     ```bash
-    cd server
+    cd backend
     ```
 
 2. Install dependencies using npm.
@@ -84,7 +86,16 @@ MERN Stack is a JavaScript Stack that is used for easier and faster deployment o
     npm install
     ```
 
-3. Start the server using nodemon.
+3. Create a .env file in the root directory and set the following environment variables:
+
+    ```env
+    # Example .env file
+    PORT=3000
+    MONGODB_URI=mongodb://localhost/your-database-name
+    JWT_SECRET=your-secret-key
+    ```
+
+4. Start the server using nodemon.
 
     ```bash
     nodemon app.js
@@ -95,7 +106,7 @@ MERN Stack is a JavaScript Stack that is used for easier and faster deployment o
 1. Navigate to the `client` directory.
 
     ```bash
-    cd client
+    cd frontend
     ```
 
 2. Install frontend dependencies using npm.

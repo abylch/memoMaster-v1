@@ -9,7 +9,8 @@ import CreateArea from "./CreateArea";
 import Login from "./Login";
 import Register from "./Register";
 
-axios.defaults.baseURL = process.env.SERVER_URL;
+// change the server url for render
+axios.defaults.baseURL = "http://localhost:3000";
 
 function App() {
   const [notes, setNotes] = useState([]);

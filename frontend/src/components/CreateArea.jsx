@@ -62,7 +62,8 @@ function CreateArea(props) {
     <div>
       <form className="create-note">
         {isExpanded && (
-          <input
+          <textarea
+            maxlength="20" data-limit-row-len="true" rows="1"
             name="title"
             onChange={handleChange}
             value={note.title}
@@ -71,6 +72,7 @@ function CreateArea(props) {
         )}
         <textarea
           name="content"
+          onkeydown={expand}
           onClick={expand}
           onChange={handleChange}
           value={note.content}

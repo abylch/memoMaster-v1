@@ -74,7 +74,7 @@ function Register({ onRegister }) {
         }></Alert>
       </Alert>
     </Stack> : <></> }
-      <div className="">
+      <div className="login-box">
       <h2>Register</h2>
       {error && <p className="error-message">{error}</p>}
       <form onSubmit={handleRegister}>
@@ -123,8 +123,7 @@ function Register({ onRegister }) {
             sx={{ mt: 3, mb: 2 }}
           >
             Register
-          </Button>        
-        <button type="submit">Register</button>
+          </Button>
       </form>
       </div>
       </Box>

@@ -42,6 +42,7 @@ function Login({ onLogin }) {
     } catch (error) {
       // Handle login errors
       console.error("Login failed", error);
+      //localStorage.setItem("user", null);
       setError("Invalid email or password. Please try again.");
     }
   };

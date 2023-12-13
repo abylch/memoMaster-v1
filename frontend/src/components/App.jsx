@@ -42,6 +42,9 @@ function App() {
           }
         }
       } catch (error) {
+        const loggedInUser = localStorage.setItem("user", null);
+        console.log("localStorage loggedInUser reset checkLoginStatus App.js:", loggedInUser);
+        console.error("Error checking login status after localStorage reset", error);
         setUser(null);
         setNotes([]);
       }
@@ -91,8 +94,9 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div>
+    <div id="page-container">
         <Header/>
+        <div id="content-wrap">
         <Routes>
           <Route
             path="/login"
@@ -126,8 +130,11 @@ function App() {
             }
           />
         </Routes>
+        </div>
+        <div id="footer">
         <Footer />
-      </div>
+        </div>
+        </div>
     </BrowserRouter>
   );
 }

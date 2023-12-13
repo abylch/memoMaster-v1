@@ -9,8 +9,9 @@ import CreateArea from "./CreateArea";
 import Login from "./Login";
 import Register from "./Register";
 
-// change the server url for render
-axios.defaults.baseURL = "http://localhost:3000";
+// change the server url for render https://memo-master-api.onrender.com
+// for local http://localhost:3000
+axios.defaults.baseURL = "https://memo-master-api.onrender.com";
 
 function App() {
   const [notes, setNotes] = useState([]);

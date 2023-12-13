@@ -72,6 +72,15 @@ footer p {
     font-size: 1.5rem;
   }
 
+  form.create-note {
+    position: relative;
+    width: inherit;
+  }
+
+  .note {
+    width: inherit;
+  }
+
   #page-container {
     position: relative;
     min-height: 100vh;

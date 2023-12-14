@@ -53,69 +53,6 @@ footer p {
   color: #6c6767;
 }
 
-/* Responsive styles for smaller screens */
-@media only screen and (max-width: 768px) {
-
-  /* fix the footer problem */
-  html,body,#root {
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
-   }
-
-   footer {
-    padding-top: auto;
-   }
-  
-  header {
-    padding: 16px;
-  }
-
-  .header-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: left;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-    gap: 1.5rem;
-  }
-
-  header h1 {
-    font-size: 3.0rem;
-  }
-  header h3 {
-    font-size: 1.5rem;
-  }
-
-  form.create-note {
-    position: relative;
-    width: 320px;
-  }
-
-  .note {
-    width: inherit;
-  }
-
-  #page-container {
-    position: relative;
-    min-height: 100vh;
-  }
-  
-  #content-wrap {
-    padding-bottom: 2.5rem;    /* Footer height */
-  }
-  
-  #footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 2.5rem;            /* Footer height */
-  }
-
-}
-
-
 .note {
   background: #fff;
   border-radius: 7px;
@@ -208,7 +145,7 @@ form.create-note button {
 }
 
 #content-wrap {
-  padding-bottom: 2.5rem;    /* Footer height */
+  padding-bottom: 500px;    /* Footer height */
 }
 
 #footer {
@@ -217,7 +154,8 @@ form.create-note button {
   bottom: 0;
   width: 100%;
   height: 2.5rem;            /* Footer height */
-  padding-top: auto;
+  padding-top: 200px; /*margin from upper elemnt */
+  
 }
 
 html,body,#root {
@@ -225,3 +163,50 @@ html,body,#root {
   flex-direction: column;
   min-height: 100%;
  }
+
+
+ /* Small devices (portrait tablets and large phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+  /* fix the footer problem */
+  html,body,#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+   }
+
+   form.create-note {
+    position: relative;
+    width: 350px;
+  }
+
+   footer {
+    padding-top: auto;
+   }
+  
+  header {
+    padding: 16px;
+  }
+
+  .header-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  header h1 {
+    font-size: 3.0rem;
+  }
+  header h3 {
+    font-size: 1.5rem;
+  }
+
+  .note {
+    width: inherit;
+  }
+
+}

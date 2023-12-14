@@ -72,7 +72,7 @@ function CreateArea(props) {
         )}
         <textarea
           name="content"
-          onkeydown={expand}
+          onKeyDown={expand}
           onClick={expand}
           onChange={handleChange}
           value={note.content}

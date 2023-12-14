@@ -55,16 +55,8 @@ function Register({ onRegister }) {
 
   return (
     <div className="login-container">
-    <Box
-        sx={{  
-          marginTop: 5,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
       {alert ? 
-        <Stack sx={{ width: '100%' }} spacing={2}>
+        <Stack sx={{ width: '60%' }} spacing={2}>
       <Alert severity="success">
         <AlertTitle>Success</AlertTitle>
         Register Successful  — <Alert  action={
@@ -73,8 +65,15 @@ function Register({ onRegister }) {
           </Button></Link>
         }></Alert>
       </Alert>
-    </Stack> : <></> }
-      <div className="login-box">
+    </Stack> : <Box
+        sx={{  
+          marginTop: 5,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+    <div className="">
       <h2>Register</h2>
       {error && <p className="error-message">{error}</p>}
       <form onSubmit={handleRegister}>
@@ -126,7 +125,7 @@ function Register({ onRegister }) {
           </Button>
       </form>
       </div>
-      </Box>
+      </Box> }
     </div>
   );
 }

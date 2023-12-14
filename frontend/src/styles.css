@@ -145,7 +145,7 @@ form.create-note button {
 }
 
 #content-wrap {
-  padding-bottom: 500px;    /* Footer height */
+  padding-bottom: 200px;    /* Footer height */
 }
 
 #footer {
@@ -177,7 +177,7 @@ html,body,#root {
 
    form.create-note {
     position: relative;
-    width: 350px;
+    width: 260px;
   }
 
    footer {

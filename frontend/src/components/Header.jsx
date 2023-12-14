@@ -38,7 +38,7 @@ function Header({ onLogout }) {
           hello, {user !== null ? user.email : "world!"}
         </h3>
         <h3>{currentTime}</h3>
-        {user !== null  ? <Button variant="contained" onClick={handleLogout} ><h3>Logout</h3> </Button> : ""}
+        {user !== null  ? <Button color="secondary" variant="contained" onClick={handleLogout} ><h3>Logout</h3> </Button> : ""}
         
       </div>
     </header>
@@ -46,19 +46,3 @@ function Header({ onLogout }) {
 }
 
 export default Header;
-
-
-// import React from "react";
-// import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
-// // import logo from '../mm1.PNG';
-
-// function Header() {
-//   return (
-//     <header>
-//     {/* <img src={logo} alt="mm1" width="100" height="80" /> */}
-//       <h1>memoMaster <TipsAndUpdatesIcon/></h1>
-//     </header>
-//   );
-// }
-
-// export default Header;

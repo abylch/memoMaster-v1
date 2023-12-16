@@ -55,7 +55,7 @@ function CreateArea(props) {
       setExpanded(false);
     } catch (error) {
       console.error("Error creating note:", error);
-      checkLoginStatus();
+      const loggedInUser = localStorage.setItem("user", null);
     }
   };
 

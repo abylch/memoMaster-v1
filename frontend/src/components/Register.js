@@ -7,6 +7,7 @@ import Button from "@mui/material/Button";
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 import Stack from '@mui/material/Stack';
+import LinearProgress from "@mui/material/LinearProgress"; // Import LinearProgress
 
 
 
@@ -16,12 +17,17 @@ function Register({ onRegister }) {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const [alert, setAlert] = useState(false);
+  const [loading, setLoading] = useState(false); // State for loader
 
   const handleRegister = async (e) => {
     e.preventDefault();
 
 
     try {
+
+      // Start loading
+      setLoading(true);
+
       // Assuming your API endpoint for registration is '/api/user/register'
       const response = await axios.post("/api/auth/register", {
         email,
@@ -115,14 +121,14 @@ function Register({ onRegister }) {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Button
+          {loading ? (
+                <LinearProgress size={100} thickness={50} color="secondary" /> // Display loader while loading
+              ) : (<Button
             type="submit"
             fullWidth
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
-          >
-            Register
-          </Button>
+          >Register</Button>)}
       </form>
       </div>
       </Box> }

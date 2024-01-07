@@ -4,16 +4,22 @@ import axios from "axios";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import LinearProgress from "@mui/material/LinearProgress"; // Import LinearProgress
 
 function Login({ onLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false); // State for loader
 
   const handleLogin = async (e) => {
     e.preventDefault();
 
     try {
+
+      // Start loading
+      setLoading(true);
+
       // Make a request to your backend server for authentication
       const response = await axios.post("/api/auth/login", {
         email,
@@ -86,14 +92,16 @@ function Login({ onLogin }) {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Button
+          
+          {loading ? (
+                <LinearProgress size={100} thickness={50} color="secondary" /> // Display loader while loading
+              ) : (<Button
             type="submit"
             fullWidth
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
-          >
-            Login
-          </Button>
+          >Login</Button>)}
+          
         </form>
         <p>
           Don't have an account?{" "}

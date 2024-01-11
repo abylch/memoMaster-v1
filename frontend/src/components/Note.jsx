@@ -1,30 +1,23 @@
 import React from "react";
-import DeleteIcon from '@mui/icons-material/Delete';
-import axios from "axios";
+import DeleteIcon from "@mui/icons-material/Delete";
+import { deleteNote } from "./services/apiNote";
 
-function Note(props) {
-  console.log("Deleting note props test:", props);
-  const handleClick = async () => {
-    try {
-      // Assuming your API endpoint for deleting a note is '/api/notes/:id'
-      await axios.delete(`/api/notes/${props.noteId}`);
-
-      // Notify the parent component about the deleted note
-      props.onDelete(props.noteId);
-    } catch (error) {
-      console.error("Error deleting note:", error);
-    }
+function Note({ noteId, onDelete, title, content, time }) {
+  console.log("Deleting note props test:");
+  const handleClick = () => {
+    deleteNote(noteId);
+    onDelete(noteId);
   };
 
   return (
-    <div className="note">
-      <h1>{props.title}</h1>
-      <p>{props.content}</p>
-      
+    <div className='note'>
+      <h1>{title}</h1>
+      <p>{content}</p>
+
       <button onClick={handleClick}>
-        <DeleteIcon/>
+        <DeleteIcon />
       </button>
-      <p>{props.time}</p>
+      <p>{time}</p>
     </div>
   );
 }

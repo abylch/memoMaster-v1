@@ -3,7 +3,12 @@
   margin: 0;
   box-sizing: border-box;
 }
-
+.bg-red {
+  background-color: red;
+}
+.border {
+  border: 2px dotted green;
+}
 html {
   font-family: "Montserrat", sans-serif;
 }
@@ -12,7 +17,6 @@ body {
   background: #eee;
   padding: 0 16px;
   background-image: url("https://www.transparenttextures.com/patterns/purty-wood.png");
-  
 }
 
 header {
@@ -124,7 +128,7 @@ form.create-note button {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 80vh;
 }
 
 .login-box {
@@ -138,14 +142,13 @@ form.create-note button {
   color: red;
 }
 
-
 #page-container {
   position: relative;
   min-height: 100vh;
 }
 
 #content-wrap {
-  padding-bottom: 200px;    /* Footer height */
+  padding-bottom: 200px; /* Footer height */
 }
 
 #footer {
@@ -153,37 +156,38 @@ form.create-note button {
   text-align: center;
   bottom: 0;
   width: 100%;
-  height: 2.5rem;            /* Footer height */
+  height: 2.5rem; /* Footer height */
   padding-top: 30px; /*margin from upper elemnt */
-  
 }
 
-html,body,#root {
+html,
+body,
+#root {
   display: flex;
   flex-direction: column;
   min-height: 100%;
- }
+}
 
-
- /* Small devices (portrait tablets and large phones, 600px and down) */
+/* Small devices (portrait tablets and large phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-
   /* fix the footer problem */
-  html,body,#root {
+  html,
+  body,
+  #root {
     display: flex;
     flex-direction: column;
     min-height: 100%;
-   }
+  }
 
-   form.create-note {
+  form.create-note {
     position: relative;
     width: 260px;
   }
 
-   footer {
+  footer {
     padding-top: auto;
-   }
-  
+  }
+
   header {
     padding: 16px;
   }
@@ -199,7 +203,7 @@ html,body,#root {
   }
 
   header h1 {
-    font-size: 3.0rem;
+    font-size: 3rem;
   }
   header h3 {
     font-size: 1.5rem;
@@ -208,5 +212,4 @@ html,body,#root {
   .note {
     width: inherit;
   }
-
 }

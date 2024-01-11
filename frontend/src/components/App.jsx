@@ -27,14 +27,14 @@ function App() {
           setUser(loggedInUser);
           console.log("user after setUser from checkLoginStatus App.js:", user);
 
-        // set defaults, @@@ token
-        axios.defaults.headers.common = {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${loggedInUser.token}`,
-        };
+          // set defaults, @@@ token
+          axios.defaults.headers.common = {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${loggedInUser.token}`,
+          };
 
           const url = `/api/notes/${loggedInUser.userId}`;
-          const response = await axios.get(url, );
+          const response = await axios.get(url);
 
           if (response.status === 200) {
             setNotes(response.data);
@@ -43,8 +43,14 @@ function App() {
         }
       } catch (error) {
         const loggedInUser = localStorage.setItem("user", null);
-        console.log("localStorage loggedInUser reset checkLoginStatus App.js:", loggedInUser);
-        console.error("Error checking login status after localStorage reset", error);
+        console.log(
+          "localStorage loggedInUser reset checkLoginStatus App.js:",
+          loggedInUser
+        );
+        console.error(
+          "Error checking login status after localStorage reset",
+          error
+        );
         setUser(null);
         setNotes([]);
       }
@@ -94,50 +100,57 @@ function App() {
 
   return (
     <BrowserRouter>
-    <div id="page-container">
-        <Header/>
-        <div id="content-wrap">
-        <Routes>
-          <Route
-            path="/login"
-            element={user ? <Navigate to="/" /> : <Login onLogin={handleLogin} />}
-          />
-          <Route
-            path="/register"
-            element={user ? <Navigate to="/" /> : <Register onRegister={handleRegister} />}
-          />
-          <Route
-            path="/"
-            element={
-              user ? (
-                <>
-                  <CreateArea onAdd={fetchUserNotes} />
-                  {notes.map((noteItem, index) => (
-                    <Note
-                      key={index}
-                      id={index}
-                      noteId={noteItem._id}
-                      title={noteItem.title}
-                      time={noteItem.time}
-                      content={noteItem.content}
-                      onDelete={fetchUserNotes}
-                    />
-                  ))}
-                </>
-              ) : (
-                <Navigate to="/login" />
-              )
-            }
-          />
-        </Routes>
+      <div id='page-container' className='border'>
+        <Header />
+        <div id='content-wrap' className='border'>
+          <Routes>
+            <Route
+              path='/login'
+              element={
+                user ? <Navigate to='/' /> : <Login onLogin={handleLogin} />
+              }
+            />
+            <Route
+              path='/register'
+              element={
+                user ? (
+                  <Navigate to='/' />
+                ) : (
+                  <Register onRegister={handleRegister} />
+                )
+              }
+            />
+            <Route
+              path='/'
+              element={
+                user ? (
+                  <>
+                    <CreateArea onAdd={fetchUserNotes} />
+                    {notes.map((noteItem, index) => (
+                      <Note
+                        key={index}
+                        id={index}
+                        noteId={noteItem._id}
+                        title={noteItem.title}
+                        time={noteItem.time}
+                        content={noteItem.content}
+                        onDelete={fetchUserNotes}
+                      />
+                    ))}
+                  </>
+                ) : (
+                  <Navigate to='/login' />
+                )
+              }
+            />
+          </Routes>
         </div>
-        <div id="footer">
-        <Footer />
+        <div id='footer'>
+          <Footer />
         </div>
-        </div>
+      </div>
     </BrowserRouter>
   );
 }
 
 export default App;
-

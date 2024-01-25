@@ -29,7 +29,7 @@ function Header({ onLogout }) {
   };
 
   return (
-    <header className=''>
+    <header>
       <div className='header-content'>
         <h1>
           memoMaster <TipsAndUpdatesIcon />
@@ -38,11 +38,9 @@ function Header({ onLogout }) {
         <h3>{currentTime}</h3>
         {user !== null ? (
           <Button color='secondary' variant='contained' onClick={handleLogout}>
-            <h3>Logout</h3>{" "}
+            <h3>Logout</h3>
           </Button>
-        ) : (
-          ""
-        )}
+            ) : ("")}
       </div>
     </header>
   );

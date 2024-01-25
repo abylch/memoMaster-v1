@@ -3,12 +3,7 @@
   margin: 0;
   box-sizing: border-box;
 }
-.bg-red {
-  background-color: red;
-}
-.border {
-  border: 2px dotted green;
-}
+
 html {
   font-family: "Montserrat", sans-serif;
 }

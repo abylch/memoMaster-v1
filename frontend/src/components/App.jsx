@@ -100,9 +100,9 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div id='page-container' className='border'>
+      <div id='page-container'>
         <Header />
-        <div id='content-wrap' className='border'>
+        <div id='content-wrap'>
           <Routes>
             <Route
               path='/login'
